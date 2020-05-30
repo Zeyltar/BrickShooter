@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    public GameObject Cube;
     public float ms;
     private Vector3 go_left;
     private Vector3 go_right;
