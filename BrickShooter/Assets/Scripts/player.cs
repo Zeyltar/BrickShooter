@@ -10,8 +10,8 @@ public class player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        go_left = new Vector3(-speed, 0f, 0f);
-        go_right = new Vector3(speed, 0f, 0f);
+        go_left = new Vector3(-1, 0f, 0f);
+        go_right = new Vector3(1, 0f, 0f);
     }
 
     // Update is called once per frame
@@ -19,11 +19,11 @@ public class player : MonoBehaviour
     {
         if (Input.GetKey("q"))
         {
-            transform.Translate(go_left * Time.deltaTime);
+            transform.Translate(go_left * speed * Time.deltaTime);
         }
         if (Input.GetKey("d"))
         {
-            transform.Translate(go_right * Time.deltaTime);
+            transform.Translate(go_right * speed * Time.deltaTime);
         }
 
         if (Input.GetMouseButton(0));
