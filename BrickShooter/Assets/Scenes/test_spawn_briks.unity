@@ -451,7 +451,7 @@ MonoBehaviour:
   startPosition: {x: 0, y: 10, z: 1}
   timeMax: 5
   cadency: 1
-  speed: 0.5
+  speed: 1
   spawnRates:
   - tag: NormalBrick
     minProbailityRange: 0

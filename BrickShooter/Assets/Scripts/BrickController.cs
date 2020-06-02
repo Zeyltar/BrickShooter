@@ -34,9 +34,10 @@ public class BrickController : MonoBehaviour
         {
             CreateBrickRow();
             timeCounter = timeMax;
+            MoveBricks();
         }
         timeCounter -= Time.deltaTime * cadency;
-        MoveBricks();
+        
     }
 
     void CreateBrick(Vector3 position, string tag = NORMAL_BRICK)
@@ -94,7 +95,7 @@ public class BrickController : MonoBehaviour
     {
         for (int i = 0; i < list.Count; i++)
         {
-            list[i].transform.Translate(Vector3.down * speed * Time.deltaTime);
+            list[i].transform.Translate(Vector3.down * speed);
         }
     }
 }
