@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class projectilscript : MonoBehaviour        
+public class ProjectileScript : MonoBehaviour        
 {
     private float speed;
     private float outofmap;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,19 +25,13 @@ public class projectilscript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider col)
-    { 
-        if (col.gameObject.tag == "ScrollBrick" || col.gameObject.tag == "NormalBrick" || col.gameObject.tag == "SpeedBrick" || col.gameObject.tag == "FirerateBrick")
-        {
-            Destroy(col.gameObject);
-            Destroy(gameObject);
-        }
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
-        //BrickController.list.Remove(collision.gameObject);
-        //Destroy(collision.gameObject);
+        if (collision.gameObject.CompareTag("ScrollBrick") || collision.gameObject.CompareTag("NormalBrick") || collision.gameObject.CompareTag("SpeedBrick") || collision.gameObject.CompareTag("FirerateBrick"))
+        {
+            BrickController.list.Remove(collision.gameObject);
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
