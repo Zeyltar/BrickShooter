@@ -13,8 +13,13 @@ public class BrickController : MonoBehaviour
     private float timeCounter = 0;
     public float timeMax;
     public float cadency;
-    public float nrmBrickProb;
     public float speed;
+
+    public float normalBrickSpawnRate;
+    public float scrollBrickSpawnRate;
+    public float playerSpeedBrickSpawnRate;
+    public float firerateBrickSpawnRate;
+
 
 
     void Start()
@@ -51,9 +56,17 @@ public class BrickController : MonoBehaviour
         {
             float lRand = Random.value;
             
-            if (lRand < nrmBrickProb)
+            if (lRand < normalBrickSpawnRate)
             {
-                CreateBrick(new Vector3(startX, 0, 0), "NrmBrick");
+                CreateBrick(new Vector3(startX, 0, 0));
+            }
+            else if (lRand/2 < scrollBrickSpawnRate/2)
+            {
+                CreateBrick(new Vector3(startX, 0, 0));
+            }
+            else if (lRand/3 < playerSpeedBrickSpawnRate/3)
+            {
+                CreateBrick(new Vector3(startX, 0, 0));
             }
             startX += 1;
         }
