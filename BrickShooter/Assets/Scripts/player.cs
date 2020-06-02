@@ -5,13 +5,14 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
     public float speed;
-    private Vector3 go_left;
-    private Vector3 go_right;
+
+    public GameObject FirePrefab;
+    public Vector3 offset;
+
+    public static List<GameObject> listFire = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
-        go_left = new Vector3(-speed, 0f, 0f);
-        go_right = new Vector3(speed, 0f, 0f);
     }
 
     // Update is called once per frame
@@ -19,16 +20,19 @@ public class player : MonoBehaviour
     {
         if (Input.GetKey("q"))
         {
-            transform.Translate(go_left * Time.deltaTime);
+            transform.Translate(Vector3.left * Time.deltaTime * speed);
         }
         if (Input.GetKey("d"))
         {
-            transform.Translate(go_right * Time.deltaTime);
+            transform.Translate(Vector3.right * Time.deltaTime * speed);
         }
 
-        if (Input.GetMouseButton(0));
+        if (Input.GetMouseButtonDown(0))
         {
             //fonction tire
+            GameObject lFire = Instantiate(FirePrefab) as GameObject;
+            lFire.transform.position = transform.position;
+            listFire.Add(lFire);
         }
     }
 }
