@@ -153,7 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  FirePrefab: {fileID: 0}
+  FirePrefab: {fileID: 536407773643836111, guid: 573bc1e3fa2de134f953664556a1f371,
+    type: 3}
   offset: {x: 0, y: 0, z: 0}
 --- !u!65 &308131110
 BoxCollider:
@@ -451,10 +452,19 @@ MonoBehaviour:
   timeMax: 5
   cadency: 1
   speed: 0.5
-  normalBrickSpawnRate: 0.3
-  scrollBrickSpawnRate: 0
-  playerSpeedBrickSpawnRate: 0
-  firerateBrickSpawnRate: 0
+  spawnRates:
+  - tag: NormalBrick
+    minProbailityRange: 0
+    maxProbabilityRange: 29
+  - tag: ScrollBrick
+    minProbailityRange: 30
+    maxProbabilityRange: 32
+  - tag: SpeedBrick
+    minProbailityRange: 40
+    maxProbabilityRange: 42
+  - tag: FirerateBrick
+    minProbailityRange: 50
+    maxProbabilityRange: 51
 --- !u!1 &1258403853
 GameObject:
   m_ObjectHideFlags: 0

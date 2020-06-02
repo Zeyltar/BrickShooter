@@ -15,12 +15,12 @@ public class BrickController : MonoBehaviour
     public float cadency;
     public float speed;
 
-    public float normalBrickSpawnRate;
-    public float scrollBrickSpawnRate;
-    public float playerSpeedBrickSpawnRate;
-    public float firerateBrickSpawnRate;
+    public SpawnProbability[] spawnRates = new SpawnProbability[4];
 
-
+    private const string NORMAL_BRICK = "NormalBrick";
+    private const string SCROLL_BRICK = "ScrollBrick";
+    private const string SPEED_BRICK = "SpeedBrick";
+    private const string FIRERATE_BRICK = "FirerateBrick";
 
     void Start()
     {
@@ -39,14 +39,34 @@ public class BrickController : MonoBehaviour
         MoveBricks();
     }
 
-    void CreateBrick(Vector3 position = new Vector3(), string tag = "NrmBrick")
+    void CreateBrick(Vector3 position, string tag = NORMAL_BRICK)
     {
         GameObject lBrick = Instantiate(brickPrefab) as GameObject;
         lBrick.transform.position = startPosition + position;
         lBrick.transform.SetParent(transform);
         lBrick.tag = tag;
+        lBrick.name = tag;
+
+        if (tag == SCROLL_BRICK)
+        {
+            ChangeColor(lBrick, Color.red);
+        }
+        else if (tag == SPEED_BRICK)
+        {
+            ChangeColor(lBrick, Color.blue);
+        }
+        else if (tag == FIRERATE_BRICK)
+        {
+            ChangeColor(lBrick, Color.green);
+        }
+
         list.Add(lBrick);
         
+    }
+
+    void ChangeColor(GameObject go, Color color)
+    {
+        go.GetComponent<Renderer>().material.color = color;
     }
 
     void CreateBrickRow(int size = 10)
@@ -54,21 +74,18 @@ public class BrickController : MonoBehaviour
         float startX = size * -1 / 2;
         for (int i = 0; i < size; i++)
         {
-            float lRand = Random.value;
-            
-            if (lRand < normalBrickSpawnRate)
+            int lRange = Random.Range(0, 100);
+
+            for (int j = 0; j < spawnRates.Length; j++)
             {
-                CreateBrick(new Vector3(startX, 0, 0));
-            }
-            else if (lRand/2 < scrollBrickSpawnRate/2)
-            {
-                CreateBrick(new Vector3(startX, 0, 0));
-            }
-            else if (lRand/3 < playerSpeedBrickSpawnRate/3)
-            {
-                CreateBrick(new Vector3(startX, 0, 0));
+                if (lRange >= spawnRates[j].minProbailityRange && lRange <= spawnRates[j].maxProbabilityRange)
+                {
+                    CreateBrick(new Vector3(startX, 0, 0), spawnRates[j].tag);
+                    
+                }
             }
             startX += 1;
+
         }
     }
 
@@ -80,4 +97,12 @@ public class BrickController : MonoBehaviour
             list[i].transform.Translate(Vector3.down * speed * Time.deltaTime);
         }
     }
+}
+
+[System.Serializable]
+public class SpawnProbability
+{
+    public string tag;
+    public int minProbailityRange;
+    public int maxProbabilityRange;
 }
