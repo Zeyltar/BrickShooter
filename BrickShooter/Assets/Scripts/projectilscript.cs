@@ -16,4 +16,11 @@ public class projectilscript : MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * speed);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        //BrickController.list.Remove(collision.gameObject);
+        //Destroy(collision.gameObject);
+    }
 }
