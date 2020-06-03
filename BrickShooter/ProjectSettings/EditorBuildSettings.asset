@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7171de5e1fbd6204bb7c6300bd5af7fe
+  - enabled: 1
+    path: Assets/Scenes/test_spawn_briks.unity
+    guid: 6d683dbf23544b74b86fbe914e0cdc78
+  - enabled: 1
+    path: Assets/Scenes/Setting.unity
+    guid: d238208281756f74b9e31d56ab91839c
+  - enabled: 1
+    path: Assets/Scenes/Shop.unity
+    guid: 6f2b229676789d14db0a6f0084265cbe
   m_configObjects: {}
