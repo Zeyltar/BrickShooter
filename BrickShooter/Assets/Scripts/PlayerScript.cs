@@ -12,7 +12,7 @@ public class PlayerScript   : MonoBehaviour
     public float firerate;
     public float cadency;
 
-    private float _maxSpeed;
+    private float _maxSpeed = 20;
 
 
     // Start is called before the first frame update
