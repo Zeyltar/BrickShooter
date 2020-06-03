@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e508d3e8d8fb64f8902b463dd23d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   projectilePrefab: {fileID: 536407773643836111, guid: 573bc1e3fa2de134f953664556a1f371,
     type: 3}
-  firerate: 0
-  cadency: 0
+  firerate: 1
+  cadency: 1
 --- !u!65 &308131110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -655,6 +655,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickController
       objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: timeMax
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnRates.Array.data[1].maxProbabilityRange
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnRates.Array.data[2].maxProbabilityRange
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: cadency
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnRates.Array.data[3].maxProbabilityRange
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 6480159977894964654, guid: 273e0da86c2ca2b439d0e35206886bfb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -709,41 +744,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: timeMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: spawnRates.Array.data[1].maxProbabilityRange
-      value: 32
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: spawnRates.Array.data[2].maxProbabilityRange
-      value: 42
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: spawnTime
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: speed
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: cadency
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
-        type: 3}
-      propertyPath: spawnRates.Array.data[3].maxProbabilityRange
-      value: 52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 273e0da86c2ca2b439d0e35206886bfb, type: 3}
