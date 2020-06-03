@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 308131109}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,11 +152,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e508d3e8d8fb64f8902b463dd23d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0
   projectilePrefab: {fileID: 536407773643836111, guid: 573bc1e3fa2de134f953664556a1f371,
     type: 3}
-  firerate: 1
-  cadency: 1
+  firerate: 0
+  cadency: 0
 --- !u!65 &308131110
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -404,6 +404,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -16, y: 0, z: 0}
+--- !u!1 &857526593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 857526595}
+  - component: {fileID: 857526594}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &857526594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857526593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a53619030ff7b44ca10cb5380cef18b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &857526595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857526593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 15.911102, y: -14.215893, z: -0.09239769}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258403853
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,12 +718,32 @@ PrefabInstance:
     - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
         type: 3}
       propertyPath: spawnRates.Array.data[1].maxProbabilityRange
-      value: 31
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
         type: 3}
       propertyPath: spawnRates.Array.data[2].maxProbabilityRange
-      value: 41
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnTime
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: cadency
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6480159977894964653, guid: 273e0da86c2ca2b439d0e35206886bfb,
+        type: 3}
+      propertyPath: spawnRates.Array.data[3].maxProbabilityRange
+      value: 52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 273e0da86c2ca2b439d0e35206886bfb, type: 3}

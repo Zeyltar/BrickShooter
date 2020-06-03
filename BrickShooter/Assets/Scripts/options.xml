@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <gameconfig>
+    <bricks>
+      <add cadency="1"/>
+      <add speed="1"/>
+      <add spawnTime="3"/>
+    </bricks>
+    <player>
+      <add cadency="1"/>
+      <add speed="10"/>
+      <add firerate="1"/>
+    </player>
+  </gameconfig>
+</configuration>

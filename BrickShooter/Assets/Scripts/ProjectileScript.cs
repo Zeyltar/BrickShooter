@@ -27,8 +27,26 @@ public class ProjectileScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("ScrollBrick") || collision.gameObject.CompareTag("NormalBrick") || collision.gameObject.CompareTag("SpeedBrick") || collision.gameObject.CompareTag("FirerateBrick"))
+        Debug.Log(BrickController.NORMAL_BRICK);
+        if (collision.gameObject.CompareTag(BrickController.NORMAL_BRICK) || collision.gameObject.CompareTag(BrickController.SCROLL_BRICK) ||  collision.gameObject.CompareTag(BrickController.SPEED_BRICK) || collision.gameObject.CompareTag(BrickController.FIRERATE_BRICK))
         {
+            if (collision.gameObject.CompareTag(BrickController.SCROLL_BRICK))
+            {
+                GameController.IncreaseScrollSpeed(GameController.SCALING_VALUE);
+            }
+            else if (collision.gameObject.CompareTag(BrickController.SPEED_BRICK))
+            {
+                GameController.IncreasePlayerSpeed(GameController.SCALING_VALUE);
+            }
+            else if (collision.gameObject.CompareTag(BrickController.FIRERATE_BRICK))
+            {
+                GameController.IncreasePlayerFirerate(GameController.SCALING_VALUE);
+            }
+            else if (collision.gameObject.CompareTag("Player"))
+            {
+
+            }
+
             BrickController.list.Remove(collision.gameObject);
             Destroy(collision.gameObject);
             Destroy(gameObject);

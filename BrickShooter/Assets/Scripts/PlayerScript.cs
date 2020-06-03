@@ -12,6 +12,8 @@ public class PlayerScript   : MonoBehaviour
     public float firerate;
     public float cadency;
 
+    private float _maxSpeed;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,5 +51,12 @@ public class PlayerScript   : MonoBehaviour
         {
             timeCounter -= Time.deltaTime * cadency;
         }
+
+    }
+    public float MaxSpeed
+    {
+        get => _maxSpeed;
+
+        set => _maxSpeed = value;
     }
 }

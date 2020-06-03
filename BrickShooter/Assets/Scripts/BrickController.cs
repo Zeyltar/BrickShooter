@@ -11,21 +11,20 @@ public class BrickController : MonoBehaviour
     public static List<GameObject> list = new List<GameObject>();
 
     private float timeCounter = 0;
-    public float timeMax;
+    public float spawnTime;
+
+    //vitesse de spawn/défilement
     public float cadency;
+
+    //pas de défilement
     public float speed;
 
     public SpawnProbability[] spawnRates = new SpawnProbability[4];
 
-    private const string NORMAL_BRICK = "NormalBrick";
-    private const string SCROLL_BRICK = "ScrollBrick";
-    private const string SPEED_BRICK = "SpeedBrick";
-    private const string FIRERATE_BRICK = "FirerateBrick";
-
-    void Start()
-    {
-        
-    }
+    private const string _NORMAL_BRICK = "NormalBrick";
+    private const string _SCROLL_BRICK = "ScrollBrick";
+    private const string _SPEED_BRICK = "SpeedBrick";
+    private const string _FIRERATE_BRICK = "FirerateBrick";
 
     // Update is called once per frame
     void Update()
@@ -33,14 +32,14 @@ public class BrickController : MonoBehaviour
         if (timeCounter <= 0)
         {
             CreateBrickRow();
-            timeCounter = timeMax;
+            timeCounter = spawnTime;
             MoveBricks();
         }
         timeCounter -= Time.deltaTime * cadency;
         
     }
 
-    void CreateBrick(Vector3 position, string tag = NORMAL_BRICK)
+    void CreateBrick(Vector3 position, string tag)
     {
         GameObject lBrick = Instantiate(brickPrefab) as GameObject;
         lBrick.transform.position = startPosition + position;
@@ -90,13 +89,29 @@ public class BrickController : MonoBehaviour
         }
     }
 
-
     void MoveBricks()
     {
         for (int i = 0; i < list.Count; i++)
         {
             list[i].transform.Translate(Vector3.down * speed);
         }
+    }
+
+    public static string NORMAL_BRICK
+    {
+        get => _NORMAL_BRICK;
+    }
+    public static string SCROLL_BRICK
+    {
+        get => _SCROLL_BRICK;
+    }
+    public static string SPEED_BRICK
+    {
+        get => _SPEED_BRICK;
+    }
+    public static string FIRERATE_BRICK
+    {
+        get => _FIRERATE_BRICK;
     }
 }
 
